@@ -49,6 +49,7 @@ const dropdownMenuY = ref(0)
 const dropdownShow = ref(false)
 const currentRightSelectItem = ref<Panel.ItemInfo | null>(null)
 const currentAddItenIconGroupId = ref<number | undefined>()
+const suppressNextItemClick = ref(false)
 
 const settingModalShow = ref(false)
 
@@ -112,6 +113,11 @@ function openPage(openMethod: number, url: string, title?: string) {
 }
 
 function handleItemClick(itemGroupIndex: number, item: Panel.ItemInfo) {
+  if (suppressNextItemClick.value) {
+    suppressNextItemClick.value = false
+    return
+  }
+
   if (items.value[itemGroupIndex] && items.value[itemGroupIndex].sortStatus) {
     handleEditItem(item)
     return
@@ -419,6 +425,15 @@ function handleChangeNetwork(mode: PanelStateNetworkModeEnum) {
 //   // console.log(event)
 //   // console.log(items.value)
 // }
+
+function handleDragEnd(itemGroup: ItemGroup) {
+  // SortableJS emits click after a drag in some browsers; swallow that click so the item is not opened.
+  suppressNextItemClick.value = true
+  handleSaveSort(itemGroup)
+  window.setTimeout(() => {
+    suppressNextItemClick.value = false
+  }, 300)
+}
 
 function handleSaveSort(itemGroup: ItemGroup) {
   const saveItems: Common.SortItemRequest[] = []
@@ -767,7 +782,8 @@ function getGroupDotTop(groupId?: number) {
                   ]"
                   :style="{ gap: `${panelState.panelConfig.webpageListGapPx ?? 10}px` }"
                   filter=".not-drag"
-                  :disabled="!itemGroup.sortStatus"
+                  :disabled="authStore.visitMode !== VisitMode.VISIT_MODE_LOGIN || currentSearchKeyword.trim() !== ''"
+                  @end="handleDragEnd(itemGroup)"
                 >
                   <div
                     v-for="item, index in (itemGroup.items || [])"
@@ -836,7 +852,8 @@ function getGroupDotTop(groupId?: number) {
                     v-model="itemGroup.items" item-key="id" :animation="300"
                     class="icon-info-box"
                     filter=".not-drag"
-                    :disabled="!itemGroup.sortStatus"
+                    :disabled="authStore.visitMode !== VisitMode.VISIT_MODE_LOGIN || currentSearchKeyword.trim() !== ''"
+                    @end="handleDragEnd(itemGroup)"
                   >
                     <div v-for="item, index in itemGroup.items" :key="index" :title="item.description" @contextmenu="(e) => handleContextMenu(e, itemGroupIndex, item)">
                       <AppIcon
@@ -873,7 +890,8 @@ function getGroupDotTop(groupId?: number) {
                     class="icon-small-box"
 
                     filter=".not-drag"
-                    :disabled="!itemGroup.sortStatus"
+                    :disabled="authStore.visitMode !== VisitMode.VISIT_MODE_LOGIN || currentSearchKeyword.trim() !== ''"
+                    @end="handleDragEnd(itemGroup)"
                   >
                     <div v-for="item, index in itemGroup.items" :key="index" :title="item.description" @contextmenu="(e) => handleContextMenu(e, itemGroupIndex, item)">
                       <AppIcon
