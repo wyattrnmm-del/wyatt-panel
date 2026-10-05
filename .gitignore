@@ -56,3 +56,9 @@ service/web/
 /database/
 uploads/*
 !uploads/.gitkeep
+
+# NAS runtime data and deployment backups (never commit personal links/icons)
+/data/
+/nas-backups/
+*.db-wal
+*.db-shm
