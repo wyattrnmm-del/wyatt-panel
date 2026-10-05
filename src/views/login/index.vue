@@ -117,7 +117,7 @@ function handleChangeLanuage(value: Language) {
         </div> -->
 
         <div class="login-powered flex justify-center">
-          Powered By <a href="https://github.com/liandu2024/AnGe-Panel" target="_blank" class="login-powered-link ml-[5px]">Wyatt-Panel</a>
+          Powered By <span class="ml-[5px]">Wyatt-Panel</span>
         </div>
       </NForm>
     </NCard>

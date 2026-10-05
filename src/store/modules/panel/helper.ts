@@ -2,7 +2,7 @@ import { ss } from '@/utils/storage'
 import { PanelPanelConfigStyleEnum, PanelStateNetworkModeEnum } from '@/enums'
 import defaultBackground from '@/assets/defaultBackground.webp'
 const LOCAL_NAME = 'panelStorage'
-export const DEFAULT_LOGO_TEXT = 'AnGe-Panel'
+export const DEFAULT_LOGO_TEXT = 'Wyatt-Panel'
 
 // Default footer is empty (no branding) unless user sets it.
 const defaultFooterHtml = ''
