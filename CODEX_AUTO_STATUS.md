@@ -13,3 +13,8 @@
 - 仓库：[wyattrnmm-del/wyatt-panel](https://github.com/wyattrnmm-del/wyatt-panel)
 - 默认分支：`main`；远程提交：`8c10bbd`。
 - README 已标注基于 AnGe-Panel 二次开发。
+
+## 2026-10-05｜直接拖动排序与版本链接
+
+- 版本链接已指向个人 Wyatt-Panel 仓库；首页支持登录后直接拖动图标并自动保存。
+- 最新远程提交：`c06e78c`；NAS 数据目录已加入忽略规则。
