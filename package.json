@@ -1,11 +1,11 @@
 {
-  "name": "ange-panel",
+  "name": "wyatt-panel",
   "version": "2.0.4",
   "private": false,
-  "description": "AnGe-Panel Web",
+  "description": "Wyatt-Panel Web",
   "author": "BraisedHunter <95302870@qq.com>",
   "keywords": [
-    "AnGe-Panel",
+    "Wyatt-Panel",
     "vue"
   ],
   "scripts": {

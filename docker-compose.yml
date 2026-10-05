@@ -1,7 +1,7 @@
 services:
-  ange-panel:
+  wyatt-panel:
     image: ghcr.io/liandu2024/ange-panel:v2.04
-    container_name: ange-panel
+    container_name: wyatt-panel
     volumes:
       - ./data:/data
     ports:

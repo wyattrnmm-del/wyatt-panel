@@ -5,7 +5,7 @@
 
 <img src="./doc/images/main-preview.jpg" width="100%" />
 
-# AnGe-Panel
+# Wyatt-Panel
 
 [![Github](https://img.shields.io/badge/Github-123456?logo=github&labelColor=242424)](https://github.com/liandu2024/AnGe-Panel)
 [![docker](https://img.shields.io/badge/docker-123456?logo=docker&logoColor=fff&labelColor=1c7aed)](https://github.com/liandu2024/AnGe-Panel/pkgs/container/ange-panel) 
@@ -56,7 +56,7 @@ A perfect website navigation + webpage bookmarks panel.
 在支持 Docker 设备上执行以下指令：
 
 ```bash
-docker run -d --name ange-panel --restart=unless-stopped \
+docker run -d --name wyatt-panel --restart=unless-stopped \
   -p 3005:3005 \
   -v /root/ange-data:/data \
   ghcr.io/liandu2024/ange-panel:latest
@@ -68,8 +68,8 @@ docker run -d --name ange-panel --restart=unless-stopped \
 
 ```bash
 docker pull ghcr.io/liandu2024/ange-panel:latest
-docker stop ange-panel && docker rm ange-panel
-docker run -d --name ange-panel --restart=unless-stopped \
+docker stop wyatt-panel && docker rm wyatt-panel
+docker run -d --name wyatt-panel --restart=unless-stopped \
   -p 3005:3005 \
   -v /root/ange-data:/data \
   ghcr.io/liandu2024/ange-panel:latest

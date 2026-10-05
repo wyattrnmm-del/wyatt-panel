@@ -13,7 +13,7 @@ const versionName = '2.04'
     <div class="flex flex-col items-center justify-center">
       <img :src="srcSvglogo" width="100" height="100" alt="">
       <div class="text-3xl font-semibold">
-        AnGe-Panel
+        Wyatt-Panel
       </div>
       <div class="text-xl">
         <NGradientText type="info">
