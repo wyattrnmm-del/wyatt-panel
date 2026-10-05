@@ -6,7 +6,7 @@
 - 来源：`https://github.com/liandu2024/AnGe-Panel`
 - 上游 Git remote：`upstream`
 - 当前分支：`codex/wyatt-panel`
-- 本地定位：基于 AnGe-Panel 的 Wyatt-Panel 衍生项目，尚未配置个人 GitHub remote，尚未上传。
+- 本地定位：基于 AnGe-Panel 的 Wyatt-Panel 衍生项目，已配置个人 GitHub remote `origin` 并上传到 `main`。
 
 ## 已完成
 
@@ -26,10 +26,17 @@
 
 1. 明确 Wyatt-Panel 第一项功能改动和品牌视觉范围。
 2. 逐项修复/验证对应前端或后端，并保持提交粒度清晰。
-3. 确定个人 GitHub 用户名与公开仓库设置后，再新增 remote、创建仓库并上传；上传前保留人工确认。
+3. 后续功能改动继续在 `codex/wyatt-panel` 分支提交，完成后推送到 GitHub `main`。
 
 ## 最新变更｜移除开发者广告与自有图标
 
 - Wyatt-Panel About 页面已移除上游社群、市场及 AI 推广内容，改为简短的自托管产品说明；保留版本检查和 Sun-Panel MIT 来源声明。
 - 新图标位于 `src/assets/logo.svg`，并已同步到 `dist/assets/logo-3d38229d.svg`、`dist/favicon.svg` 与 `dist/favicon-black.svg`。
 - 为保证当前 3005 后端服务可直接看到改动，已定点修补 `dist/assets/index-69cf921e.js`、`index-4d989675.js`、`index-8a73d23b.js` 和 `dist/index.html`；未运行被禁止的旧前端构建。
+
+## GitHub 上传（2026-10-05）
+
+- 公开仓库：[wyattrnmm-del/wyatt-panel](https://github.com/wyattrnmm-del/wyatt-panel)。
+- 默认分支：`main`；当前远程提交：`8c10bbd`。
+- 仓库描述和 README 已明确标注“基于 AnGe-Panel 二次开发”，并保留 Sun-Panel MIT 来源声明。
+- `upstream` 继续指向原始 AnGe-Panel；`origin` 指向个人 Wyatt-Panel 仓库。
